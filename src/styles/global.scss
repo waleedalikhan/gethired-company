@@ -1,0 +1,145 @@
+// Global variables for ease in css code
+$thetransition: all 0.4s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+$green-light: #eafcf7;
+$green: #31dfad;
+
+// Configuring 'Gilroy' font globally
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("../assets/fonts/Gilroy-Bold.woff2") format("woff2");
+}
+
+// Assigning the 'Gilroy' font globally
+body {
+  font-family: "Gilroy-Bold", sans-serif !important;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #efefef;
+    border-radius: 40px;
+  }
+}
+
+.active-link {
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-right: 3rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: 0;
+    background: #2960ff;
+  }
+}
+
+.active-notification {
+  position: relative;
+  margin-bottom: -20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: 0;
+    background: #2960ff;
+    margin-left: -9px;
+  }
+}
+
+.active-avatar {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: -40%;
+    background: #2960ff;
+  }
+}
+
+.cool-transition {
+  transition: $thetransition;
+}
+
+.profile-header-bg {
+  background: url("/img/profile/profile-header.svg") center / cover no-repeat;
+}
+
+.latest-opts-dots {
+  position: absolute;
+  bottom: -35px;
+  list-style: none;
+  display: block;
+  text-align: left;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  width: 100%;
+  li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: -5px;
+    padding: 0;
+    cursor: pointer;
+    button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        outline: none;
+        &:before {
+          opacity: 1;
+        }
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "\2022";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 8px;
+        line-height: 20px;
+        text-align: center;
+        color: #000;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+    &.slick-active button:before {
+      color: #000;
+      opacity: 0.75;
+    }
+  }
+}
