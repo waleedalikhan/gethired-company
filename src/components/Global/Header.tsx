@@ -3,6 +3,7 @@ import ActiveLink from "@/components/Global/ActiveLink";
 import HeaderDropDown from "@/components/Global/HeaderDropDown";
 import Link from "next/link";
 import NotificationDropdown from "@/components/Global/NotificationDropdown";
+import Sidebar from "@/components/Global/Sidebar/index";
 
 interface LinksToRender {
   id: number;
@@ -83,7 +84,7 @@ const Header: React.FC = () => {
           </div>
           <div className="w-2/3 text-right flex items-center justify-end">
             <button className="bg-transparent outline-none focus:outline-none">
-              <img src="/img/icons/message-icon.svg" alt="" className="w-2/3"/>
+              <img src="/img/icons/message-icon.svg" alt="" className="w-2/3" />
             </button>
             <button className="bg-transparent outline-none focus:outline-none ml-4 mr-5">
               <img src="/img/icons/bell-header-icon.svg" alt="" />
@@ -107,6 +108,7 @@ const Header: React.FC = () => {
             <HeaderDropDown />
           </div>
         </div>
+        <Sidebar />
       </header>
       {/* Header ends */}
     </React.Fragment>

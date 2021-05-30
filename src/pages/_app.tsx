@@ -1,9 +1,14 @@
-import React from 'react';
-import { AppProps } from 'next/app'
-import { ApolloProvider } from '@apollo/client'
-import { useApollo } from '../lib/apollo'
-import '../styles/tailwind.css';
-import '../styles/global.scss';
+import React from "react";
+import { AppProps } from "next/app";
+import { ApolloProvider } from "@apollo/client";
+import { Provider } from "react-redux";
+import { useApollo } from "../lib/apollo";
+import store from "@/redux/store";
+import withRedux from "next-redux-wrapper";
+import "../styles/tailwind.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css"
+import "../styles/global.scss";
 
 // import { ApolloClient, InMemoryCache } from '@apollo/client';
 // const client = new ApolloClient({
@@ -12,14 +17,17 @@ import '../styles/global.scss';
 // });
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-
-  const apolloClient = useApollo(pageProps.initialApolloState)
+  const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (
     <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
+      <Provider store={store}>
+        <Component />
+      </Provider>
     </ApolloProvider>
-  )
-}
+  );
+};
 
-export default App;
+const makeStore = () => store;
+
+export default withRedux(makeStore)(App);

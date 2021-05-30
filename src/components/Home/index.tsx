@@ -10,7 +10,7 @@ import ChatInitiater from "@/components/Global/ChatInitiater/index";
 const Home: React.FC = () => {
   return (
     <Layout title="Home | Gethired Company">
-      <section className="min-h-screen bg-secondary-light pt-24 px-6">
+      <section className="min-h-screen bg-secondary-light pt-24 px-6 lg:pb-0 pb-10">
         <div className="flex w-full flex-wrap items-start">
           <div className="lg:w-1/3 w-full lg:pr-3">
             <LatestTalentsCard />

@@ -2,6 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import cn from "classnames";
+import { connect } from "react-redux";
+
+interface CPFromRedux {
+  store: {
+    firstName: string;
+    lastName: string;
+  };
+}
 
 interface NotificationStructure {
   id: number;
@@ -15,10 +23,7 @@ type Props = {
   lastName?: string;
 };
 
-const NotificationDropdown: React.FC<Props> = ({
-  firstName = "Waleed Ali",
-  lastName = "Khan",
-}) => {
+const NotificationDropdown: React.FC<Props> = ({ firstName, lastName }) => {
   let [isOpen, setIsOpen] = useState<boolean>(false);
   let [bellActive, setBellActive] = useState<boolean>(false);
   let [bellMobActive, setBellMobActive] = useState<boolean>(false);
@@ -139,7 +144,10 @@ const NotificationDropdown: React.FC<Props> = ({
             <img src="/img/icons/bell-icon.svg" alt="" />
           </button>
           <span className="text-secondary mx-4 truncate text-sm mt-2 mr-0 z-40">
-            {firstName + " " + lastName.charAt(0)}.
+            {lastName !== undefined
+              ? firstName + " " + lastName.charAt(0)
+              : null}
+            .
           </span>
         </div>
         <div
@@ -184,4 +192,9 @@ const NotificationDropdown: React.FC<Props> = ({
   );
 };
 
-export default NotificationDropdown;
+const mapStateToProps = (state: CPFromRedux) => ({
+  firstName: state.store.firstName,
+  lastName: state.store.lastName,
+});
+
+export default connect(mapStateToProps)(NotificationDropdown);
