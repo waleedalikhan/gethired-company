@@ -1,8 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import cn from "classnames";
+import { connect } from "react-redux";
 
-const HeaderDropdown: React.FC = () => {
+interface CPFromRedux {
+  store: {
+    userProfilePic: string;
+  };
+}
+
+type Props = {
+  profilePic: string;
+};
+
+const HeaderDropdown: React.FC<Props> = ({ profilePic }) => {
   let [dropdownPopoverShow, setDropdownPopoverShow] = useState<boolean>(false);
   const node = useRef<any>(null);
 
@@ -55,7 +66,7 @@ const HeaderDropdown: React.FC = () => {
               type="button"
               onClick={showHideDropDown}
             >
-              <img src="/img/profile_img.png" alt="" className="rounded-full" />
+              <img src={profilePic} alt="" className="rounded-full" />
               <i className="fas fa-chevron-down ml-4 text-secondary"></i>
             </button>
             <div
@@ -93,4 +104,8 @@ const HeaderDropdown: React.FC = () => {
   );
 };
 
-export default HeaderDropdown;
+const mapStateToProps = (state: CPFromRedux) => ({
+  profilePic: state.store.userProfilePic,
+});
+
+export default connect(mapStateToProps)(HeaderDropdown);

@@ -28,8 +28,8 @@ module.exports = {
           skill2: "#FFF8E7",
           skill3: "#FFF0EC",
           skill4: "#EAFCF7",
-          skill5: "#EFEDFE"
-        }
+          skill5: "#EFEDFE",
+        },
       },
       fontSize: {
         "1xl": "1.375rem",
@@ -38,13 +38,14 @@ module.exports = {
       height: {
         "1xl": "3.25rem",
         "3xl": "4.75rem",
-        "18": "4.5rem",
-        "90": "22.5rem",
+        18: "4.5rem",
+        90: "22.5rem",
         "profile-height-desktop": "435px",
-        "profile-height-mobile": "219px"
+        "profile-height-mobile": "219px",
       },
       borderRadius: {
         "4xl": "1.875rem",
+        "5xl": "2rem",
       },
       width: {
         "notifications-dropdown": "420px",
@@ -53,15 +54,15 @@ module.exports = {
         "card-width": "352px",
       },
       inset: {
-        "17": "4.5rem",
+        17: "4.5rem",
       },
       boxShadow: {
         main: "0px 4px 30px rgba(0, 0, 0, 0.16)",
         light: "0px 25px 47px -21px rgba(0,0,0,0.52)",
       },
       margin: {
-        "18": "4.5rem",
-        "46": "-11.5rem"
+        18: "4.5rem",
+        46: "-11.5rem",
       },
     },
   },

@@ -43,6 +43,23 @@ body {
   }
 }
 
+.active-sidebar-link {
+  position: relative;
+  margin-right: 3rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    bottom: 0;
+    background: #2960ff;
+    left: 0;
+  }
+}
+
 .active-notification {
   position: relative;
   margin-bottom: -20px;

@@ -52,6 +52,8 @@ const Header: React.FC = () => {
     },
   ]);
 
+  let [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+
   let headerLink = headerLinks.map((link) => {
     return (
       <React.Fragment key={link.id}>
@@ -64,8 +66,32 @@ const Header: React.FC = () => {
     );
   });
 
+  const openSidebar = () => {
+    setSidebarOpen(true);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
+  const sidebarResize = () => {
+    if (window.innerWidth >= 1024) {
+      setSidebarOpen(false);
+    }
+  };
+
   useEffect(() => {
     setHeaderLinks(headerLinks);
+
+    sidebarResize();
+
+    window.addEventListener("resize", () => {
+      sidebarResize();
+    });
+
+    return window.removeEventListener("resize", () => {
+      sidebarResize();
+    });
   }, []);
 
   return (
@@ -89,7 +115,10 @@ const Header: React.FC = () => {
             <button className="bg-transparent outline-none focus:outline-none ml-4 mr-5">
               <img src="/img/icons/bell-header-icon.svg" alt="" />
             </button>
-            <button className="bg-transparent outline-none focus:outline-none">
+            <button
+              className="bg-transparent outline-none focus:outline-none"
+              onClick={openSidebar}
+            >
               <img src="/img/icons/hamburger-icon.svg" alt="" />
             </button>
           </div>
@@ -108,7 +137,7 @@ const Header: React.FC = () => {
             <HeaderDropDown />
           </div>
         </div>
-        <Sidebar />
+        <Sidebar onCrossClick={closeSidebar} isSidebarOpen={sidebarOpen} />
       </header>
       {/* Header ends */}
     </React.Fragment>

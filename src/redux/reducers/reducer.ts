@@ -7,8 +7,9 @@ interface ActionsInterface {
 
 const main = (
   state = {
-    firstName: "Waleed Ali",
-    lastName: "Khan",
+    firstName: "Waleed",
+    lastName: "Ali",
+    userProfilePic: "/img/profile_img.png",
     latestTalents: [
       {
         id: 1,
