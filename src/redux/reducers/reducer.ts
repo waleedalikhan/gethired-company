@@ -1,4 +1,5 @@
 import * as t from "@/redux/types";
+import opportunitiesData from "@/redux/reducers/opportunitiesReducer";
 
 interface ActionsInterface {
   type: string;
@@ -93,6 +94,7 @@ const main = (
       roll: "gethired chat support",
       userPic: "/img/chat-initiater.png",
     },
+    ...opportunitiesData,
   },
   action: ActionsInterface
 ) => {

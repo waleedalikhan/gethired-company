@@ -7,6 +7,7 @@ type Props = {
   isTransparent?: boolean;
   radius?: string;
   classNames?: string;
+  isFullWidth?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -15,14 +16,16 @@ const Button: React.FC<Props> = ({
   isTransparent,
   radius = "rounded-lg",
   classNames,
+  isFullWidth = true,
 }) => {
   return (
     <button
       className={cn(
-        "outline-none focus:outline-none w-full my-8 btn-hover cool-transition h-1xl ",
+        "outline-none focus:outline-none my-8 btn-hover cool-transition h-1xl ",
         {
           "text-white bg-primary": !isTransparent,
           "bg-transparent": isTransparent === true,
+          "w-full": isFullWidth,
         },
         radius,
         classNames
