@@ -42,6 +42,7 @@ module.exports = {
         90: "22.5rem",
         "profile-height-desktop": "435px",
         "profile-height-mobile": "219px",
+        "52px": "52px",
       },
       borderRadius: {
         "4xl": "1.875rem",
@@ -52,7 +53,8 @@ module.exports = {
         "18-width": "4.5rem",
         "52-width": "3.25rem",
         "card-width": "352px",
-        "303": "303px"
+        "303": "303px",
+        
       },
       inset: {
         17: "4.5rem",

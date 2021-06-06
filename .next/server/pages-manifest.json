@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/opportunities": "pages/opportunities.js",
-  "/": "pages/index.js"
+  "/opportunities/single-opportunity-details": "pages/opportunities/single-opportunity-details.js",
+  "/opportunities": "pages/opportunities.js"
 }

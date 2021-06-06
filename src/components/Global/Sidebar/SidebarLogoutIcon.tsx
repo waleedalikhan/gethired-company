@@ -1,6 +1,6 @@
 import React from "react";
 
-const SidebarLogoutIcon: React.FC<Props> = () => {
+const SidebarLogoutIcon: React.FC = () => {
   return (
     <>
       <svg

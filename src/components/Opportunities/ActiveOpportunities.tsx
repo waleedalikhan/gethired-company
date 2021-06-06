@@ -2,6 +2,7 @@ import React from "react";
 import OpportunitiesRow from "@/components/Opportunities/OpportunitiesRow";
 import { connect } from "react-redux";
 import OpportunitiesRowHeading from "@/components/Opportunities/OpportunitiesRowHeading";
+import { useRouter } from "next/router";
 
 interface ActiveOppInterface {
   id: string | number;
@@ -25,11 +26,20 @@ type Props = {
 };
 
 const ActiveOpportunities: React.FC<Props> = ({ activeOpportunities }) => {
+  const router = useRouter();
+
+  const navigateToSingleOpp = () => {
+    router.push("/opportunities/single-opportunity-details");
+  };
+
   const renderActiveOpps = activeOpportunities.map(
     (opp: ActiveOppInterface) => {
       return (
         <React.Fragment key={opp.id}>
-          <div className="lg:mb-3 mb-6">
+          <div
+            className="lg:mb-3 mb-6 cursor-pointer"
+            onClick={() => navigateToSingleOpp()}
+          >
             <OpportunitiesRow
               isOppSelected={opp.isChecked}
               oppName={opp.name}
