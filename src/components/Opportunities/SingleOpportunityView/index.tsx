@@ -1,21 +1,24 @@
 import React from "react";
 import Layout from "@/components/layouts/Layout";
-import SingleOppHeader from "@/components/Opportunities/SingleOpportunityView/SingleOppHeader";
-import SingleOppTabs from "@/components/Opportunities/SingleOpportunityView/SingleOppTabs";
+import ViewOpportunityBoard from "@/components/Opportunities/SingleOpportunityView/ViewOpportunityBoard";
 
-const SingleOpportunityDetails: React.FC = () => {
+const SingleOpportunityView: React.FC = () => {
   return (
-    <>
-      <Layout title="Single Opportunity Details | GetHired Company">
-        <div className="pt-32 pb-14 min-h-screen bg-secondary-light">
-          <div className="px-6">
-          <SingleOppHeader />
-          <SingleOppTabs />
+    <Layout title="Single Opportunity View | GetHired Company">
+      <div className="pt-24 pb-16 min-h-screen bg-secondary-light">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap justify-around items-start">
+            <div className="lg:w-2/3 bg-white p-8 rounded-xl border border-secondary-elements">
+              <ViewOpportunityBoard />
+            </div>
+            <div className="lg:w-1/4 bg-blue-500">
+              <h1>Hello World</h1>
+            </div>
           </div>
         </div>
-      </Layout>
-    </>
+      </div>
+    </Layout>
   );
 };
 
-export default SingleOpportunityDetails;
+export default SingleOpportunityView;

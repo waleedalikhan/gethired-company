@@ -24,15 +24,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/opportunities": [
+    "/opportunities/single-opportunity-view": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/opportunities.js"
-    ],
-    "/opportunities/single-opportunity-details": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/opportunities/single-opportunity-details.js"
+      "static/chunks/pages/opportunities/single-opportunity-view.js"
     ]
   },
   "ampFirstPages": []

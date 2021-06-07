@@ -1,12 +1,12 @@
 import React from "react";
-import SingleOpportunityView from "@/components/Opportunities/SingleOpportunityView";
+import SingleOpportunityDetails from "@/components/Opportunities/SingleOpportunityDetails";
 
-const SingleOpportunityDetails: React.FC = () => {
+const SingleOppDetails: React.FC = () => {
   return (
     <>
-      <SingleOpportunityView />
+      <SingleOpportunityDetails />
     </>
   );
 };
 
-export default SingleOpportunityDetails;
+export default SingleOppDetails;
