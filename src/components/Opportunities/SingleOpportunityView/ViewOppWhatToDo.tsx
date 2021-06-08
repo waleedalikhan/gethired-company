@@ -9,8 +9,10 @@ const ViewOppWhatToDo: React.FC<Props> = ({ whatToDoList }) => {
     return (
       <React.Fragment key={index}>
         <div className="w-full mb-6">
-          <h1 className="text-secondary flex items-center">
-            <span className="h-1 w-1 inline-block mr-3 rounded-full bg-primary"></span>
+          <h1 className="text-secondary flex lg:items-center">
+            <div>
+              <span className="h-1 w-1 inline-block mr-3 rounded-full bg-primary"></span>
+            </div>
             <span className="font-sans">{item}</span>
           </h1>
         </div>

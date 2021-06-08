@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "codegen": "graphql-let",
-    "dev": "yarn codegen && next",
-    "build": "yarn codegen && next build",
+    "dev": "node init && yarn codegen && next",
+    "build": "node init && yarn codegen && next build",
     "test": "yarn codegen && jest",
-    "start": "next start",
+    "start": "node init && next start",
     "export": "next export"
   },
   "dependencies": {
