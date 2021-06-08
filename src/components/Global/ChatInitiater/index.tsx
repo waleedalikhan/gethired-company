@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import GetHiredCard from "@/components/Global/GetHiredCard";
 import Button from "@/components/Global/Button";
 import ChatInitiaterSidebar from "@/components/Global/ChatInitiater/ChatInitiaterSidebar";
+import cn from "classnames";
 
 type Props = {
   classNames?: string;
+  headerWidth?: string;
+  imgWidth?: string;
+  initiaterInfoWidth?: string;
+  hasDivider?: boolean;
 };
 
-const ChatInitiater: React.FC<Props> = ({ classNames }) => {
+const ChatInitiater: React.FC<Props> = ({
+  classNames,
+  headerWidth = "md:w-2/3 w-full",
+  imgWidth = "w-1/2",
+  initiaterInfoWidth = "w-1/2",
+  hasDivider,
+}) => {
   let [openChatSidebar, setOpenChatSidebar] = useState<boolean>(false);
 
   const initiateChat = () => {
@@ -18,12 +29,21 @@ const ChatInitiater: React.FC<Props> = ({ classNames }) => {
     <>
       <GetHiredCard classNames={classNames}>
         <div className="flex flex-wrap w-full">
-          <div className="md:w-2/3 w-full flex items-center mx-auto">
-            <div className="w-1/2">
+          <div
+            className={cn(
+              "flex items-center mx-auto",
+              {
+                "border-b border-secondary-elements": hasDivider,
+                "border-b-0": !hasDivider,
+              },
+              headerWidth
+            )}
+          >
+            <div className={cn(imgWidth)}>
               <img src="/img/chat-initiater.png" alt="" />
             </div>
-            <div className="w-1/2">
-              <h1 className="text-titles">Kelly</h1>
+            <div className={cn(initiaterInfoWidth)}>
+              <h1 className="text-titles text-lg">Kelly</h1>
               <p className="text-xs text-secondary upprecase mb-2">
                 gethired chat support
               </p>
