@@ -23,14 +23,14 @@ const ViewOppTalentDetails: React.FC<Props> = ({
 
   return (
     <>
-      <div className="flex items-start my-10 pb-10 border-secondary-elements border-b">
-        <div className="w-1/2">
+      <div className="flex flex-wrap items-start my-10 pb-10 border-secondary-elements border-b">
+        <div className="lg:w-1/2 w-full lg:mb-0 mb-10">
           <p className="text-xss text-secondary uppercase mb-3">
             talent location
           </p>
           {renderTalentLocation}
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2 w-full">
           <p className="text-xss text-secondary uppercase mb-3">
             talent work hour timezone
           </p>
